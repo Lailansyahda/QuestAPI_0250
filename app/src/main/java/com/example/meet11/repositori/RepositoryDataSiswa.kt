@@ -1,5 +1,6 @@
 package com.example.meet11.repositori
 
+import com.example.meet11.apiservice.ServiceApiSiswa
 import com.example.meet11.modeldata.DataSiswa
 
 interface RepositoryDataSiswa {
@@ -8,3 +9,11 @@ interface RepositoryDataSiswa {
     <Void>
 }
 
+class JaringanRepositoryDataSiswa(
+    private val serviceApiSiswa: ServiceApiSiswa
+):RepositoryDataSiswa{
+    override suspend fun getDataSiswa() : List<DataSiswa> =
+        serviceApiSiswa.getSiswa()
+    override suspend fun postDataSiswa(dataSiswa: DataSiswa):retrofit2
+    .Response<Void> = serviceApiSiswa.postSiswa(dataSiswa)
+}
