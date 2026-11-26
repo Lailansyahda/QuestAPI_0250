@@ -30,7 +30,19 @@ class HomeViewModel(private val repositoryDataSiswa:
         loadSiswa()
     }
 
-    private fun loadSiswa() {
-        TODO("Not yet implemented")
+    fun loadSiswa(){
+        viewModelScope.launch {
+            listSiswa = StatusUiSiswa.Loading
+            listSiswa = try {
+                StatusUiSiswa.Success(repositoryDataSiswa.getDataSiswa
+                    ())
+            } catch (e:IOException){
+                StatusUiSiswa.Error
+            } catch (e:HttpException){
+                StatusUiSiswa.Error
+            } catch (e: Exception) {
+                StatusUiSiswa.Error
+            }
+        }
     }
 }
