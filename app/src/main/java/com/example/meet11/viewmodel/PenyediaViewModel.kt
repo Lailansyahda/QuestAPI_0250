@@ -1,6 +1,5 @@
 package com.example.meet11.viewmodel
 
-import EntryViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
