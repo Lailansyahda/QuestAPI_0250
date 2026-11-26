@@ -1,10 +1,11 @@
+package com.example.meet11.viewmodel
+
+import EntryViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
 import com.example.meet11.repositori.AplikasiDataSiswa
-import com.example.meet11.viewmodel.HomeViewModel
 
 fun CreationExtras.aplikasiDataSiswa():AplikasiDataSiswa = (
         this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY]
